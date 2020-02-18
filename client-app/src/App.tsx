@@ -24,7 +24,7 @@ class App extends Component {
      <Header as='h2' icon='users' content='Reactivities' />
      <List>
        {this.state.values.map((value: any) => (
-       <List.Item key={value.id}>{IDBCursorWithValue.name}</List.Item>))}
+       <List.Item key={value.id}>{value.name}</List.Item>))}
      </List>
     </div>
   );
