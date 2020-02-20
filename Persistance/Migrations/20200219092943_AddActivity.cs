@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistance.Migrations
 {
-    public partial class ActivityEntityAdded : Migration
+    public partial class AddActivity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Acivities",
+                name: "Activities",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -16,18 +16,19 @@ namespace Persistance.Migrations
                     Date = table.Column<DateTime>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
-                    Venue = table.Column<string>(nullable: true)
+                    Venue = table.Column<string>(nullable: true),
+                    Category = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Acivities", x => x.Id);
+                    table.PrimaryKey("PK_Activities", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Acivities");
+                name: "Activities");
         }
     }
 }
