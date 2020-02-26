@@ -30,7 +30,7 @@ const ActivityDashboard: React.FC<IProps> = ({
             <Grid.Column width={6}>
                 {selectedActivity && !editMode && <ActivityDetails activity={selectedActivity} setEditMode={setEditMode} setSelectedActivity={setSelectedActivity}/> }
                 {editMode &&
-                <ActivityForm setEditMode={setEditMode} /> }
+                <ActivityForm setEditMode={setEditMode} activity={selectedActivity!}/> }
             </Grid.Column>
         </Grid>
     )
