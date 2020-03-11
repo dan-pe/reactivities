@@ -49,7 +49,7 @@ const ActivityForm: React.FC<IProps> = ({setEditMode, activity: initialFormState
     }
 
     return(
-        <Segment>
+        <Segment clearing>
             <Form onSubmit={handleSubmit}>
                 <Form.Input 
                     placeholder='Title' 
