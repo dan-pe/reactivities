@@ -1,11 +1,17 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import { Item, Label, Button, Segment } from "semantic-ui-react";
 import { observer } from "mobx-react-lite";
 import ActivityStore from "../../../app/stores/activityStore";
 
 const ActivityList: React.FC = () => {
   const activityStore = useContext(ActivityStore);
-  const { activitiesByDate, selectActivity, deleteActivity, submitting, target } = activityStore;
+  const {
+    activitiesByDate,
+    selectActivity,
+    deleteActivity,
+    submitting,
+    target
+  } = activityStore;
 
   return (
     <Segment clearing>
