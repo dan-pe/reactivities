@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Application.Errors;
+using MediatR;
 using Persistance;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Application.Activities
 
                 if (activity == null)
                 {
-                    throw new Exception($"Activity of {request.Id} not found");
+                    throw new RestException(System.Net.HttpStatusCode.NotFound, new object { $"Activity of {request.Id} not found");
                 }
 
                 context.Activities.Remove(activity);
