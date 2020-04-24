@@ -1,8 +1,10 @@
-﻿using Domain;
+﻿using Application.Errors;
+using Domain;
 using MediatR;
 using Persistance;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -37,7 +39,10 @@ namespace Application.Activities
 
                 if (activity == null)
                 {
-                    throw new Exception($"Activity of {request.Id} not found");
+                    throw new RestException(HttpStatusCode.NotFound, new
+                    {
+                        activity = "Not Found"
+                    });
                 }
 
                 activity.City = request.City ?? activity.City;
