@@ -31,7 +31,7 @@ namespace Application.Activities
 
                 if (activity == null)
                 {
-                    throw new RestException(System.Net.HttpStatusCode.NotFound, new object { $"Activity of {request.Id} not found");
+                    throw new RestException(System.Net.HttpStatusCode.NotFound, $"Activity of {request.Id} not found");
                 }
 
                 context.Activities.Remove(activity);
