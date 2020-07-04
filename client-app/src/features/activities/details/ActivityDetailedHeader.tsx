@@ -2,9 +2,10 @@ import React from "react";
 import { Segment, Item, Header, Button, Image } from "semantic-ui-react";
 import { IActivity } from "../../../app/models/activity";
 import { observer } from "mobx-react-lite";
+import { Link } from "react-router-dom";
 
 const activityImageStyle = {
-  filter: "brightness(30%)"
+  filter: "brightness(30%)",
 };
 
 const activityImageTextStyle = {
@@ -13,11 +14,11 @@ const activityImageTextStyle = {
   left: "5%",
   width: "100%",
   height: "auto",
-  color: "white"
+  color: "white",
 };
 
 const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
-  activity
+  activity,
 }) => {
   return (
     <Segment.Group>
@@ -48,7 +49,12 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
       <Segment clearing attached="bottom">
         <Button color="teal">Join Activity</Button>
         <Button>Cancel attendance</Button>
-        <Button color="orange" floated="right">
+        <Button
+          as={Link}
+          to={`/manage/${activity.id}`}
+          color="orange"
+          floated="right"
+        >
           Manage Event
         </Button>
       </Segment>
