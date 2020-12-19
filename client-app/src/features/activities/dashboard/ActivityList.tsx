@@ -16,7 +16,7 @@ const ActivityList: React.FC = () => {
             {group}
           </Label>
           <Item.Group divided>
-            {activities.map(activity => (
+            {activities.map((activity) => (
               <ActivityListItem key={activity.id} activity={activity} />
             ))}
           </Item.Group>
