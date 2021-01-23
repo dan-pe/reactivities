@@ -1,7 +1,7 @@
 using System;
 using System.Net;
 
-namespace Application.Errors
+namespace Infrastructure.Errors
 {
     public class RestException : Exception
     {

@@ -1,4 +1,4 @@
-﻿using Application.Errors;
+﻿using Infrastructure.Errors;
 using Domain;
 using MediatR;
 using Persistance;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Activities
+namespace Infrastructure.Activities
 {
     public class Details
     {

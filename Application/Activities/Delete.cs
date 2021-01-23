@@ -1,4 +1,4 @@
-﻿using Application.Errors;
+﻿using Infrastructure.Errors;
 using MediatR;
 using Persistance;
 using System;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Activities
+namespace Infrastructure.Activities
 {
     public class Delete
     {
